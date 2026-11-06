@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Einladung zur Einkaufsliste</title>
+<style>
+  :root { --bg: #f7f9f4; --fg: #1a1c19; --muted: #5d6159; --accent: #2e6b30; --card: #ffffff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121411; --fg: #e2e3dd; --muted: #a8aba3; --accent: #97d68f; --card: #1d201c; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 16px;
+         background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 420px; width: 100%; background: var(--card); border-radius: 20px; padding: 28px 24px;
+         box-shadow: 0 2px 16px rgb(0 0 0 / 8%); text-align: center; }
+  h1 { font-size: 1.4rem; margin: 0 0 8px; }
+  p { color: var(--muted); margin: 8px 0; }
+  .code { font: 600 2rem/1.2 ui-monospace, "SF Mono", Consolas, monospace; letter-spacing: .08em; margin: 20px 0; color: var(--fg); }
+  ol { text-align: left; color: var(--muted); padding-left: 1.2em; }
+  .hint { font-size: .85rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Du wurdest zu einer Einkaufsliste eingeladen</h1>
+  <p>Ist die App SmartShopping installiert, öffnet sich dieser Link direkt in der App.</p>
+  <div class="code" id="code">–</div>
+  <ol>
+    <li>SmartShopping installieren und öffnen.</li>
+    <li>In der Übersicht oben rechts auf ⋮ und „Liste beitreten“ tippen.</li>
+    <li>Den Code oben eingeben.</li>
+  </ol>
+  <p class="hint">Der Code ist 7 Tage gültig.</p>
+</main>
+<script>
+  // Code aus dem Link (?c=K7M2QX9P) in zwei Blöcken anzeigen
+  const c = (new URLSearchParams(location.search).get("c") || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+  if (c.length === 8) document.getElementById("code").textContent = c.slice(0, 4) + "-" + c.slice(4);
+</script>
+</body>
+</html>

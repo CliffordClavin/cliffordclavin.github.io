@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "de.stefanphilips.smartshopping",
+      "sha256_cert_fingerprints": [
+        "2E:68:A8:17:57:82:87:F1:CE:9F:09:D8:45:1F:96:41:1C:C8:6C:C2:BC:92:02:FF:70:3C:26:98:DA:02:5A:E7"
+      ]
+    }
+  }
+]
